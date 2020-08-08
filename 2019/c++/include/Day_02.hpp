@@ -24,7 +24,7 @@ namespace day_02
     int m_parameter_two;
     int m_parameter_three;
 
-    int m_step = 4;
+    const int m_step = 4;
 
     int m_instruction_pointer;
 
