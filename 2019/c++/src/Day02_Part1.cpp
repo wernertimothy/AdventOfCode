@@ -10,7 +10,7 @@ using namespace day_02;
 
 computer::computer(const std::vector<int>& the_program) : m_program(the_program)
 {
-    m_index = 0;
+    m_instruction_pointer = 0;
     assign_code();
 }
 
@@ -21,10 +21,10 @@ void computer::print() const
 
 void computer::assign_code()
 {
-    m_opcode       = m_program[m_index];
-    m_position_one = m_program[m_index + 1];
-    m_position_two = m_program[m_index + 2];
-    m_place        = m_program[m_index + 3];
+    m_opcode          = m_program[m_instruction_pointer];
+    m_parameter_one   = m_program[m_instruction_pointer + 1];
+    m_parameter_two   = m_program[m_instruction_pointer + 2];
+    m_parameter_three = m_program[m_instruction_pointer + 3];
 }
 
 void computer::run()
@@ -33,15 +33,15 @@ void computer::run()
     {
         if ( m_opcode == 1 )
         {
-            m_program[m_place] = m_program[m_position_one] + m_program[m_position_two];
+            m_program[m_parameter_three] = m_program[m_parameter_one] + m_program[m_parameter_two];
         }
 
         else if ( m_opcode == 2 )
         {
-           m_program[m_place] = m_program[m_position_one] * m_program[m_position_two];
+           m_program[m_parameter_three] = m_program[m_parameter_one] * m_program[m_parameter_two];
         }
 
-        m_index += m_step;
+        m_instruction_pointer += m_step;
         assign_code();
     }
 

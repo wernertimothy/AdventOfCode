@@ -19,13 +19,13 @@ namespace day_02
     private:
     int m_opcode;
 
-    int m_position_one;
-    int m_position_two;
-    int m_place;
+    int m_parameter_one;
+    int m_parameter_two;
+    int m_parameter_three;
 
     int m_step = 4;
 
-    int m_index;
+    int m_instruction_pointer;
 
     // private methods
     void assign_code();
