@@ -1,54 +1,25 @@
-#include <iostream>
-#include <vector>
+
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <iostream>
 
+#include "Day_02.hpp"
 
-namespace computer_ns
-{
-    class computer
-    {
-    // public members
-    public:
-    std::vector<int> m_program;
+using namespace day_02;
 
-    // constructor
-    computer(const std::vector<int>& the_program);
-    // public methods
-    void run();
-
-    // private members
-    private:
-    int m_opcode;
-
-    int m_position_one;
-    int m_position_two;
-    int m_place;
-
-    int m_step = 4;
-
-    int m_index;
-
-    // private methods
-    void assign_code();
-    void print() const;
-
-    };
-} // computer_ns
-
-computer_ns::computer::computer(const std::vector<int>& the_program) : m_program(the_program)
+computer::computer(const std::vector<int>& the_program) : m_program(the_program)
 {
     m_index = 0;
     assign_code();
 }
 
-void computer_ns::computer::print() const
+void computer::print() const
 {
     std::cout << m_program[0] << '\n';
 }
 
-void computer_ns::computer::assign_code()
+void computer::assign_code()
 {
     m_opcode       = m_program[m_index];
     m_position_one = m_program[m_index + 1];
@@ -56,7 +27,7 @@ void computer_ns::computer::assign_code()
     m_place        = m_program[m_index + 3];
 }
 
-void computer_ns::computer::run()
+void computer::run()
 {
     while ( m_opcode != 99 )
     {
@@ -100,6 +71,6 @@ int main()
     program[2] = 2;
 
     // run the program
-    computer_ns::computer c(program);
+    computer c(program);
     c.run();
 }
