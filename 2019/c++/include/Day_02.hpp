@@ -14,6 +14,7 @@ namespace day_02
     computer(const std::vector<int>& the_program);
     // public methods
     void run();
+    void reset(const std::vector<int>& the_program);
 
     // private members
     private:
