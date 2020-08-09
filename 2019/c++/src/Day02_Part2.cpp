@@ -8,18 +8,18 @@
 
 using namespace day_02;
 
-computer::computer(const std::vector<int>& the_program) : m_program(the_program)
+Computer::Computer(const std::vector<int>& the_program) : m_program(the_program)
 {
     m_instruction_pointer = 0;
     assign_code();
 }
 
-void computer::print() const
+void Computer::print() const
 {
     std::cout << m_program[0] << '\n';
 }
 
-void computer::assign_code()
+void Computer::assign_code()
 {
     m_opcode          = m_program[m_instruction_pointer];
     m_parameter_one   = m_program[m_instruction_pointer + 1];
@@ -27,14 +27,14 @@ void computer::assign_code()
     m_parameter_three = m_program[m_instruction_pointer + 3];
 }
 
-void computer::reset(const std::vector<int>& the_program)
+void Computer::reset(const std::vector<int>& the_program)
 {
     m_program = the_program;
     m_instruction_pointer = 0;
     assign_code();
 }
 
-void computer::run()
+void Computer::run()
 {
     while ( m_opcode != 99 )
     {
@@ -57,7 +57,7 @@ void computer::run()
 
 std::tuple<int, int> brute_force(std::vector<int>& the_program)
 {
-    computer c(the_program);
+    Computer c(the_program);
 
     // bruteforce noun and verb
     for (int noun = 0; noun <= 99; noun++)
@@ -97,10 +97,9 @@ int main()
         }
     }
 
-    std::tuple<int, int> result = brute_force(program);
-
-    int noun = std::get<0>(result);
-    int verb = std::get<1>(result);
+    int noun{0};
+    int verb{0};
+    std::tie(noun, verb) = brute_force(program);
 
     std::cout << "noun:" << noun << '\n' << "verb:" << verb << '\n' << "reult:" << 100*noun + verb << '\n';
 }

@@ -8,18 +8,18 @@
 
 using namespace day_02;
 
-computer::computer(const std::vector<int>& the_program) : m_program(the_program)
+Computer::Computer(const std::vector<int>& the_program) : m_program(the_program)
 {
     m_instruction_pointer = 0;
     assign_code();
 }
 
-void computer::print() const
+void Computer::print() const
 {
     std::cout << m_program[0] << '\n';
 }
 
-void computer::assign_code()
+void Computer::assign_code()
 {
     m_opcode          = m_program[m_instruction_pointer];
     m_parameter_one   = m_program[m_instruction_pointer + 1];
@@ -27,7 +27,7 @@ void computer::assign_code()
     m_parameter_three = m_program[m_instruction_pointer + 3];
 }
 
-void computer::run()
+void Computer::run()
 {
     while ( m_opcode != 99 )
     {
@@ -71,6 +71,6 @@ int main()
     program[2] = 2;
 
     // run the program
-    computer c(program);
+    Computer c(program);
     c.run();
 }
