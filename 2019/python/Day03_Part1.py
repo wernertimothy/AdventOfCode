@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
   
 def follow_instructions(directions,steps):
-    total = len(directions) # just for printing
+    # total = len(directions) # just for printing
 
     if len(directions) != len(steps):
         return -1
