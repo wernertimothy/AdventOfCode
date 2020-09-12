@@ -74,9 +74,10 @@ std::tuple<int, int> brute_force(std::vector<int>& the_program)
             if ( c.m_program[0] == 19690720)
             {
                 return std::make_tuple(noun, verb);
-            }           
+            }        
         }
     }
+    return std::make_tuple(-1, -1); // in case no solution was found
 }
 
 int main()
@@ -96,6 +97,7 @@ int main()
             program.push_back( std::stoi(code) );
         }
     }
+    
 
     int noun{0};
     int verb{0};
