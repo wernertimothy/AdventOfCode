@@ -24,7 +24,7 @@ python -m venv .venv
 .venv\scripts\activate
 ```
 
-to create a virtual environemnt and activate it. For a more detailed descrition see the [VSCode tutorial](https://code.visualstudio.com/docs/python/python-tutorial)
+to create a virtual environemnt and activate it. For a more detailed description see the [VSCode tutorial](https://code.visualstudio.com/docs/python/python-tutorial)
 
 To enable globally installed packages, in the .venv directoy in pyvenv.cfg, set
 
