@@ -41,17 +41,20 @@ class Computer:
                 self.m_program[ self.m_program[ self.m_instruction_pointer + 3 ] ] = self.read_parameter_one() + self.read_parameter_two()
                 self.m_instruction_step = 4
 
-            if self.m_opcode == 2:
+            elif self.m_opcode == 2:
                 self.m_program[ self.m_program[ self.m_instruction_pointer + 3 ] ] = self.read_parameter_one() * self.read_parameter_two()
                 self.m_instruction_step = 4
 
-            if self.m_opcode == 3:
+            elif self.m_opcode == 3:
                 self.m_program[ self.m_program[ self.m_instruction_pointer + 1 ] ] = int( input( 'please enter your input:' ) )
                 self.m_instruction_step = 2
 
-            if self.m_opcode == 4:
+            elif self.m_opcode == 4:
                 print( 'output:', self.read_parameter_one() )
                 self.m_instruction_step = 2
+
+            else:
+                raise Exception("Somthing went wrong..!")
 
             self.m_instruction_pointer += self.m_instruction_step
             self.assign_code()
