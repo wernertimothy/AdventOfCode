@@ -17,8 +17,8 @@ int main(void) {
         for (int b: expense_report) {
             for (int c: expense_report) {
                 if (a + b + c == 2020) {
-                std::cout << "the solution is: " << a << "*" << b << "*" << c << "=" << a*b*c << std::endl;
-                goto exit;
+                    std::cout << "the solution is: " << a << "*" << b << "*" << c << "=" << a*b*c << std::endl;
+                    goto exit;
                 }
             }
         }
