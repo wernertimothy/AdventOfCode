@@ -5,6 +5,5 @@
 2019/python/ignore
 2019/c++/src/*.exe
 2019/c++/.vscode
-
-2020/pyton/.venv20
-2020/pyton/.vscode
+2020/python/.venv2020
+2020/python/.vscode
