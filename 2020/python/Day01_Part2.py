@@ -1,8 +1,8 @@
 
 def main():
-    expense_report = ReadPuzzleInput("Day01.txt")
+    expense_report = ReadPuzzleInput("PuzzleInput_Day01.txt")
     ints = BruteForce(expense_report)
-    print("the answer is:", ints[0]*ints[1]*ints[2])
+    print("the answer is:", ints[0], "*", ints[1], "*", ints[2], "=", ints[0]*ints[1]*ints[2])
 
 def ReadPuzzleInput(my_file):
     with open(my_file, 'r') as f:
