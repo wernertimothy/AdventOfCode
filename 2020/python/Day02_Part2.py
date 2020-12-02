@@ -22,8 +22,8 @@ def ReadPuzzleInput(my_file):
         for policy in policies:
             the_range = policy[0].split("-")
             candidates.append([
-                int(the_range[0]),  # at least
-                int(the_range[1]),  # the most
+                int(the_range[0]),  # position a
+                int(the_range[1]),  # position b
                 policy[1][0],       # character
                 policy[2]           # passwort
             ])
