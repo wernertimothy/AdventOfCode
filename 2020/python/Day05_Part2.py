@@ -6,7 +6,6 @@ def main():
     IDs = [seat[0]*8+seat[1] for seat in Seats]
     print("My ID is", SearchSeat(IDs))
 
-
 def SearchSeat(IDs):
     myID = 0
     IDs.sort()
