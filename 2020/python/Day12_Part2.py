@@ -7,7 +7,6 @@ def main():
 class Ship:
     def __init__(self, instructions):
         self.instructions = instructions
-        self.directions = {0 : 'N', 90 : 'E', 180 : 'S', 270 : 'W'}
         # states:
         self.x          = 0     # global coordinates
         self.y          = 0     # global coordinates
