@@ -7,16 +7,17 @@ def main():
 class Ship:
     def __init__(self, instructions):
         self.instructions = instructions
-        # states:
         self.directions = {0 : 'N', 90 : 'E', 180 : 'S', 270 : 'W'}
-        self.x = 0              # global coordinates
-        self.y = 0              # global coordinates
+        # states:
+        self.x          = 0     # global coordinates
+        self.y          = 0     # global coordinates
         self.waypoint_x = 10    # ship coordinates
         self.waypoint_y = 1     # ship coordinates
 
     def followInstructions(self):
         for inst in self.instructions:
             if inst[0] == 'F':
+                # move ship
                 self.move(inst[1])
             elif inst[0] == 'R' or inst[0] == 'L':
                 # rotate waypoint
@@ -34,7 +35,7 @@ class Ship:
         elif direction == 'W': self.waypoint_x -= amount
 
     def rotateWaypoint(self, direction, amount):
-        if direction   == 'L' : deg =  amount
+        if   direction == 'L' : deg =  amount
         elif direction == 'R' : deg = -amount
         cos = np.cos(deg * np.pi / 180)
         sin = np.sin(deg * np.pi / 180)
