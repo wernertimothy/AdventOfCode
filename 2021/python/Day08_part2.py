@@ -54,7 +54,6 @@ for entry in notes:
     else:
         configuration[2] = twofivethree[1]
         configuration[5] = twofivethree[0]
-    twofivethree.clear()
     # get 6
     for digit in zerosixnine:
         if c not in digit:
@@ -83,6 +82,7 @@ for entry in notes:
         for key, val in configuration.items():
             if sorted(digit) == sorted(val):
                 output = output + str(key)
+                break
 
     output_sum = output_sum + int(output)
 
