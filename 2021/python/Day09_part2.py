@@ -51,7 +51,7 @@ for low_point in low_points:
                 if heightmap[i_new][j_new] == 9:
                     continue
                 else:
-                    if (i_new,j_new) not in basin and not (i_new,j_new) in need_to_visit:
+                    if (i_new,j_new) not in basin and (i_new,j_new) not in need_to_visit:
                         need_to_visit.append((i_new,j_new))
     basins.append(basin)
 
