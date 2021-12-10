@@ -1,4 +1,6 @@
+# 2d arrays
 import numpy as np
+# visualization
 import matplotlib.pyplot as plt
 
 with open('PuzzleInput_day09.txt') as f:
@@ -32,9 +34,8 @@ for i in range(length):
 print(risklevelsum)
 
 # visualization
-plt.imshow(heightmap,cmap='gray')
+plt.imshow(heightmap,cmap='Greys')
 for point in low_points:
     i, j = point
-    plt.plot(j,i,'r.')
+    plt.scatter(j,i, color='red', marker='.')
 plt.show()
-
